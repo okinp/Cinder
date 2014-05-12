@@ -50,6 +50,10 @@
 	namespace cinder {
 		class CaptureImplDirectShow;
 	}
+#elif defined( CINDER_LINUX )
+	namespace cinder {
+		class CaptureImplVideo4Linux2;
+	}
 #endif
 
 #include <map>
@@ -147,6 +151,8 @@ class Capture {
 		CaptureImplAvFoundation			*mImpl;
 #elif defined( CINDER_MSW )
 		CaptureImplDirectShow			*mImpl;
+#elif defined( CINDER_LINUX )
+		CaptureImplVideo4Linux2			*mImpl;
 #endif
 	};
 	
